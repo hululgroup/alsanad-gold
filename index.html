@@ -1,0 +1,768 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>شركة السند | تاجرة الذهب والمجوهرات</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Almarai:wght@300;400;700;800&family=Tajawal:wght@300;400;500;700;800&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        :root {
+            --primary-dark: #1c2e2b;
+            --primary-gold: #c28851;
+            --primary-cream: #e6cfaa;
+            --primary-black: #020100;
+            --primary-white: #ffffff;
+            --gray-light: rgba(255,255,255,0.08);
+            --gray-border: rgba(255,255,255,0.12);
+        }
+        
+        html { scroll-behavior: smooth; }
+        
+        body {
+            font-family: 'Almarai', 'Tajawal', sans-serif;
+            background: var(--primary-dark);
+            color: var(--primary-white);
+            line-height: 1.8;
+            overflow-x: hidden;
+        }
+        
+        /* Flat Design - Clean & Modern */
+        
+        /* Navigation - Flat Style */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            padding: 1.25rem 5%;
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(28, 46, 43, 0.95);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--gray-border);
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            text-decoration: none;
+        }
+        
+        .logo img {
+            width: 48px;
+            height: 48px;
+            border-radius: 8px;
+            object-fit: cover;
+            border: 2px solid var(--primary-gold);
+        }
+        
+        .logo-text {
+            font-family: 'Almarai', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--primary-cream);
+            letter-spacing: 1px;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 2.5rem;
+            list-style: none;
+        }
+        
+        .nav-links a {
+            color: rgba(255,255,255,0.75);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: all 0.25s ease;
+            position: relative;
+            padding: 0.5rem 0;
+            font-family: 'Tajawal', sans-serif;
+        }
+        
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 0;
+            height: 2px;
+            background: var(--primary-gold);
+            transition: width 0.3s ease;
+        }
+        
+        .nav-links a:hover {
+            color: var(--primary-cream);
+        }
+        
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+        
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--primary-gold);
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+        
+        /* Hero Section - Flat Modern */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 8rem 5% 5rem;
+            position: relative;
+            background: linear-gradient(135deg, var(--primary-dark) 0%, #243834 50%, var(--primary-dark) 100%);
+        }
+        
+        .hero-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+            opacity: 0.15;
+        }
+        
+        .hero-bg img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .hero-content {
+            text-align: center;
+            max-width: 850px;
+            z-index: 1;
+            position: relative;
+        }
+        
+        .hero-badge {
+            display: inline-block;
+            padding: 0.6rem 1.75rem;
+            background: transparent;
+            border: 1.5px solid var(--primary-gold);
+            border-radius: 4px;
+            font-size: 0.9rem;
+            color: var(--primary-cream);
+            margin-bottom: 2.5rem;
+            font-family: 'Tajawal', sans-serif;
+            font-weight: 500;
+            letter-spacing: 1px;
+        }
+        
+        .hero h1 {
+            font-family: 'Almarai', sans-serif;
+            font-size: clamp(2.2rem, 5vw, 3.8rem);
+            font-weight: 800;
+            line-height: 1.4;
+            margin-bottom: 1.5rem;
+            color: var(--primary-white);
+        }
+        
+        .hero h1 .gold-text {
+            color: var(--primary-cream);
+            position: relative;
+            display: inline-block;
+        }
+        
+        .hero h1 .gold-text::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: var(--primary-gold);
+        }
+        
+        .hero p {
+            font-size: 1.15rem;
+            color: rgba(255,255,255,0.65);
+            margin-bottom: 2.5rem;
+            font-family: 'Tajawal', sans-serif;
+            font-weight: 400;
+        }
+        
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .btn {
+            padding: 1rem 2.5rem;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 0.95rem;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            cursor: pointer;
+            border: none;
+            font-family: 'Almarai', sans-serif;
+            letter-spacing: 0.5px;
+        }
+        
+        .btn-primary {
+            background: var(--primary-gold);
+            color: var(--primary-white);
+        }
+        
+        .btn-primary:hover {
+            background: #b07a48;
+            transform: translateY(-2px);
+        }
+        
+        .btn-outline {
+            background: transparent;
+            border: 2px solid var(--primary-cream);
+            color: var(--primary-cream);
+        }
+        
+        .btn-outline:hover {
+            background: var(--primary-cream);
+            color: var(--primary-dark);
+        }
+        
+        /* Section Styles - Flat */
+        .section {
+            padding: 5rem 5%;
+            position: relative;
+        }
+        
+        .section-header {
+            text-align: center;
+            margin-bottom: 3.5rem;
+        }
+        
+        .section-header h2 {
+            font-family: 'Almarai', sans-serif;
+            font-size: 2.25rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            color: var(--primary-cream);
+        }
+        
+        .section-header p {
+            color: rgba(255,255,255,0.55);
+            font-size: 1.05rem;
+            font-family: 'Tajawal', sans-serif;
+        }
+        
+        /* About Section - Flat Cards */
+        .about {
+            background: var(--primary-dark);
+        }
+        
+        .about-content {
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        
+        .about-quote {
+            font-family: 'Almarai', sans-serif;
+            font-size: 1.35rem;
+            font-weight: 700;
+            color: var(--primary-cream);
+            margin-bottom: 2rem;
+            padding: 2rem;
+            border-right: 4px solid var(--primary-gold);
+            background: var(--gray-light);
+            text-align: right;
+        }
+        
+        .about-text {
+            font-size: 1.05rem;
+            color: rgba(255,255,255,0.75);
+            line-height: 2;
+            margin-bottom: 1.5rem;
+            font-family: 'Tajawal', sans-serif;
+        }
+        
+        .heritage-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 0.75rem 1.5rem;
+            background: transparent;
+            border: 1px solid var(--primary-gold);
+            border-radius: 4px;
+            margin-top: 2rem;
+            color: var(--primary-cream);
+            font-family: 'Tajawal', sans-serif;
+        }
+        
+        /* Vision Cards - Flat Design */
+        .vision-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+        
+        .vision-card {
+            background: var(--gray-light);
+            border: 1px solid var(--gray-border);
+            border-radius: 8px;
+            padding: 2.5rem 2rem;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+        
+        .vision-card:hover {
+            border-color: var(--primary-gold);
+            transform: translateY(-4px);
+        }
+        
+        .vision-icon {
+            width: 60px;
+            height: 60px;
+            background: var(--primary-gold);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            margin: 0 auto 1.25rem;
+        }
+        
+        .vision-card h3 {
+            font-family: 'Almarai', sans-serif;
+            font-size: 1.3rem;
+            font-weight: 800;
+            color: var(--primary-cream);
+            margin-bottom: 0.75rem;
+        }
+        
+        .vision-card p {
+            color: rgba(255,255,255,0.65);
+            font-size: 0.95rem;
+            line-height: 1.7;
+            font-family: 'Tajawal', sans-serif;
+        }
+        
+        /* Categories Section - Flat Cards with Images */
+        .categories {
+            background: #243834;
+        }
+        
+        .categories-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .category-card {
+            position: relative;
+            aspect-ratio: 4/3;
+            border-radius: 8px;
+            overflow: hidden;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: 1px solid var(--gray-border);
+        }
+        
+        .category-card:hover {
+            transform: translateY(-4px);
+            border-color: var(--primary-gold);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+        
+        .category-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+        
+        .category-card:nth-child(1) .category-bg { background: url("assets/rings.jpg") center/cover; }
+        .category-card:nth-child(2) .category-bg { background: url("assets/jewelry.jpg") center/cover; }
+        .category-card:nth-child(3) .category-bg { background: url("assets/earrings.jpg") center/cover; }
+        .category-card:nth-child(4) .category-bg { background: url("assets/bracelets.jpg") center/cover; }
+        .category-card:nth-child(5) .category-bg { background: url("assets/diamonds.jpg") center/cover; }
+        .category-card:nth-child(6) .category-bg { background: url("assets/chains.jpg") center/cover; }
+        
+        .category-content {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 1.75rem;
+            background: linear-gradient(transparent, rgba(2,1,0,0.9));
+            text-align: center;
+        }
+        
+        .category-content h3 {
+            font-family: 'Almarai', sans-serif;
+            font-size: 1.4rem;
+            font-weight: 800;
+            color: var(--primary-cream);
+            margin-bottom: 0.25rem;
+        }
+        
+        .category-content p {
+            color: rgba(255,255,255,0.7);
+            font-size: 0.85rem;
+            font-family: 'Tajawal', sans-serif;
+        }
+        
+        /* Contact Section - Flat */
+        .contact {
+            background: var(--primary-dark);
+        }
+        
+        .contact-container {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        
+        .contact-card {
+            background: var(--gray-light);
+            border: 1px solid var(--gray-border);
+            border-radius: 8px;
+            padding: 3rem 2.5rem;
+        }
+        
+        .contact-card h3 {
+            font-family: 'Almarai', sans-serif;
+            font-size: 1.75rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            color: var(--primary-cream);
+        }
+        
+        .contact-card p {
+            color: rgba(255,255,255,0.65);
+            margin-bottom: 2rem;
+            font-family: 'Tajawal', sans-serif;
+        }
+        
+        .contact-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .contact-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+            text-align: center;
+        }
+        
+        .contact-item {
+            padding: 1.5rem;
+            background: var(--gray-light);
+            border-radius: 8px;
+            border: 1px solid var(--gray-border);
+        }
+        
+        .contact-item-icon {
+            width: 50px;
+            height: 50px;
+            background: transparent;
+            border: 2px solid var(--primary-gold);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.25rem;
+            margin: 0 auto 1rem;
+            color: var(--primary-gold);
+        }
+        
+        .contact-item h4 {
+            font-family: 'Almarai', sans-serif;
+            font-size: 1rem;
+            font-weight: 700;
+            color: var(--primary-cream);
+            margin-bottom: 0.5rem;
+        }
+        
+        .contact-item p {
+            color: rgba(255,255,255,0.6);
+            font-size: 0.9rem;
+            font-family: 'Tajawal', sans-serif;
+        }
+        
+        /* Footer - Flat with Hulul Credit */
+        footer {
+            padding: 2.5rem 5%;
+            text-align: center;
+            background: var(--primary-black);
+            border-top: 1px solid var(--gray-border);
+        }
+        
+        .footer-logo {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.75rem;
+            margin-bottom: 1rem;
+        }
+        
+        .footer-logo img {
+            width: 36px;
+            height: 36px;
+            border-radius: 6px;
+            border: 2px solid var(--primary-gold);
+        }
+        
+        .footer-logo span {
+            font-family: 'Almarai', sans-serif;
+            font-size: 1.15rem;
+            font-weight: 800;
+            color: var(--primary-cream);
+        }
+        
+        .footer-text {
+            color: rgba(255,255,255,0.5);
+            font-size: 0.9rem;
+            margin-bottom: 0.75rem;
+            font-family: 'Tajawal', sans-serif;
+        }
+        
+        .footer-copy {
+            color: rgba(255,255,255,0.4);
+            font-size: 0.8rem;
+            margin-bottom: 1rem;
+        }
+        
+        .powered-by {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.5rem 1rem;
+            background: var(--gray-light);
+            border-radius: 4px;
+            font-size: 0.8rem;
+            color: rgba(255,255,255,0.5);
+            font-family: 'Tajawal', sans-serif;
+        }
+        
+        .powered-by a {
+            color: var(--primary-gold);
+            text-decoration: none;
+            font-weight: 700;
+            transition: color 0.3s;
+        }
+        
+        .powered-by a:hover {
+            color: var(--primary-cream);
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+            .mobile-menu-btn { display: block; }
+            .hero h1 { font-size: 1.9rem; }
+            .section { padding: 3.5rem 5%; }
+            .section-header h2 { font-size: 1.65rem; }
+            .vision-cards, .categories-grid { grid-template-columns: 1fr; }
+            .contact-card { padding: 2rem 1.5rem; }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="#" class="logo">
+            <img src="assets/logo.jpg" alt="شركة السند">
+            <span class="logo-text">السند</span>
+        </a>
+        <ul class="nav-links">
+            <li><a href="#home">الرئيسية</a></li>
+            <li><a href="#about">من نحن</a></li>
+            <li><a href="#vision">رؤيتنا</a></li>
+            <li><a href="#categories">الفئات</a></li>
+            <li><a href="#contact">تواصل معنا</a></li>
+        </ul>
+        <button class="mobile-menu-btn">☰</button>
+    </nav>
+    
+    <section class="hero" id="home">
+        <div class="hero-bg">
+            <img src="assets/hero_bg.jpg" alt="">
+        </div>
+        <div class="hero-content">
+            <div class="hero-badge">إرث من الفخامة</div>
+            <h1>
+                <span class="gold-text">فخامَة الذهبْ</span><br>
+                <span class="gold-text">وسِحرُ المُجوهَرات</span>
+            </h1>
+            <p>رحلة الأصالة والفخامة من قلب مدينة الديوانية</p>
+            <div class="hero-buttons">
+                <a href="#categories" class="btn btn-primary">اكتشف المجموعة</a>
+                <a href="#contact" class="btn btn-outline">تواصل معنا</a>
+            </div>
+        </div>
+    </section>
+    
+    <section class="section about" id="about">
+        <div class="section-header">
+            <h2>من نحن</h2>
+            <p>قصة تبدأ من السوق الكبير</p>
+        </div>
+        <div class="about-content">
+            <div class="about-quote">
+                نصنع المجوهرات بروح العراقة، لنكون جزءًا من أجمل لحظاتكم
+            </div>
+            <p class="about-text">
+                في شركة السند لتجارة الذهب والمجوهرات، لا نبيع المجوهرات فحسب، بل نقدّم إرثًا متجذرًا في الأناقة والفخامة، بدأ من محلات حيدر الأسدي للذهب والمجوهرات في قلب مدينة الديوانية – السوق الكبير.
+            </p>
+            <p class="about-text">
+                نؤمن أن كل قطعة مجوهرات تحكي قصة، وأن البريق الحقيقي يكمن في التفاصيل.
+            </p>
+            <div class="heritage-badge">
+                <span>🏛️</span>
+                <span>السوق الكبير - الديوانية</span>
+            </div>
+        </div>
+    </section>
+    
+    <section class="section" id="vision">
+        <div class="section-header">
+            <h2>رؤيتنا وهدفنا</h2>
+            <p>نحلم بأن نكون رمز الأناقة للمرأة العربية</p>
+        </div>
+        <div class="vision-cards">
+            <div class="vision-card">
+                <div class="vision-icon">👑</div>
+                <h3>رؤيتنا</h3>
+                <p>نؤمن بأن كل امرأة تستحق أن تشعر بالتميز والتفرّد، وأن تتألق بجاذبية تنبض بالسحر والفخامة.</p>
+            </div>
+            <div class="vision-card">
+                <div class="vision-icon">🎯</div>
+                <h3>هدفنا</h3>
+                <p>تقديم الرفاهية للمرأة العصرية من خلال مجوهرات ذات تصاميم استثنائية.</p>
+            </div>
+            <div class="vision-card">
+                <div class="vision-icon">💎</div>
+                <h3>مهمتنا</h3>
+                <p>مجوهرات خطوبة استثنائية مزينة بالألماس، نقدم فيها أسمى معاني الحب.</p>
+            </div>
+        </div>
+    </section>
+    
+    <section class="section categories" id="categories">
+        <div class="section-header">
+            <h2>فئات المجوهرات</h2>
+            <p>مجموعة متنوعة من أرقى المجوهرات</p>
+        </div>
+        <div class="categories-grid">
+            <div class="category-card">
+                <div class="category-bg"></div>
+                <div class="category-content">
+                    <h3>خواتـــم</h3>
+                    <p>خواتم خطوبة وألماس استثنائية</p>
+                </div>
+            </div>
+            <div class="category-card">
+                <div class="category-bg"></div>
+                <div class="category-content">
+                    <h3>مصوغات ذهبية</h3>
+                    <p>أرقى المصوغات الذهبية الأصيلة</p>
+                </div>
+            </div>
+            <div class="category-card">
+                <div class="category-bg"></div>
+                <div class="category-content">
+                    <h3>أقــــراط</h3>
+                    <p>تشكيلة فاخرة من الأقراط الذهبية</p>
+                </div>
+            </div>
+            <div class="category-card">
+                <div class="category-bg"></div>
+                <div class="category-content">
+                    <h3>أســـاور</h3>
+                    <p>أساور ذهبية بتصاميم عصرية</p>
+                </div>
+            </div>
+            <div class="category-card">
+                <div class="category-bg"></div>
+                <div class="category-content">
+                    <h3>ألمــــاس</h3>
+                    <p>مجوهرات مزينة بأفخم الألماس</p>
+                </div>
+            </div>
+            <div class="category-card">
+                <div class="category-bg"></div>
+                <div class="category-content">
+                    <h3>سلاسل وتعاليق</h3>
+                    <p>سلاسل ذهبية أنيقة وفاخرة</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="section contact" id="contact">
+        <div class="contact-container">
+            <div class="section-header">
+                <h2>تواصل معنا</h2>
+                <p>نحن هنا لخدمتكم</p>
+            </div>
+            <div class="contact-card">
+                <h3>زورونا في معرضنا</h3>
+                <p>نحن في انتظاركم في السوق الكبير بمدينة الديوانية لتجربة فريدة من الفخامة والأناقة</p>
+                <div class="contact-buttons">
+                    <a href="tel:+964XXXXXXXXXX" class="btn btn-primary">📞 اتصل بنا</a>
+                    <a href="https://wa.me/964XXXXXXXXXX" class="btn btn-outline">💬 واتساب</a>
+                </div>
+            </div>
+            <div class="contact-info">
+                <div class="contact-item">
+                    <div class="contact-item-icon">📍</div>
+                    <h4>الموقع</h4>
+                    <p>الديوانية - السوق الكبير</p>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-item-icon">🏪</div>
+                    <h4>محلات حيدر الأسدي</h4>
+                    <p>الإرث الأصلي للشركة</p>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-item-icon">✨</div>
+                    <h4>جودة مضمونة</h4>
+                    <p>ذهب أصيل ومجوهرات فاخرة</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <footer>
+        <div class="footer-logo">
+            <img src="assets/logo.jpg" alt="شركة السند">
+            <span>شركة السند</span>
+        </div>
+        <p class="footer-text">تجارة الذهب والمجوهرات - الديوانية، العراق</p>
+        <p class="footer-copy">© 2024 شركة السند. جميع الحقوق محفوظة.</p>
+        <div class="powered-by">
+            <span>Powered By</span>
+            <a href="https://www.hulul.group" target="_blank">Hulul Group</a>
+        </div>
+    </footer>
+</body>
+</html>
